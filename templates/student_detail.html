@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>📘 {{ student.name }} — Full Breakdown</h2>
+
+<p><strong>Average:</strong> {{ student.average }} |
+    <strong>Grade:</strong> {{ student.grade }}
+</p>
+
+<a href="/students" class="btn btn-secondary mb-3">⬅ Back</a>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-primary">
+        <tr>
+            <th>Subject</th>
+            <th>Test 1</th>
+            <th>Test 2</th>
+            <th>Exam</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for sub in student.subjects %}
+        <tr>
+            <td>{{ sub.name }}</td>
+            <td>{{ sub.test1 }}</td>
+            <td>{{ sub.test2 }}</td>
+            <td>{{ sub.exam }}</td>
+            <td>{{ sub.total }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <h2 class="mb-4 text-center">All Students</h2>
+
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary mb-3">Back to Dashboard</a>
+    <a href="{{ url_for('add_form') }}" class="btn btn-primary mb-3">Add New Student</a>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            {% if students|length == 0 %}
+                <p class="text-center text-muted">No students saved yet.</p>
+            {% else %}
+
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Average</th>
+                        <th>Grade</th>
+                        <th style="width: 230px;">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for stu in students %}
+                    <tr>
+                        <td>{{ stu.name }}</td>
+                        <td>{{ stu.average }}</td>
+                        <td>{{ stu.grade }}</td>
+
+                        <td>
+                            <a href="/view/{{ stu.name }}" class="btn btn-info btn-sm">View</a>
+
+                            <a href="/edit/{{ stu.name }}" class="btn btn-warning btn-sm">
+                                Edit
+                            </a>
+
+                            <a href="/delete/{{ stu.name }}" 
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Are you sure you want to delete this student?')">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

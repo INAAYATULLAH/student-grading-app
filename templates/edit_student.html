@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>✏ Edit Student — {{ student.name }}</h2>
+<hr>
+
+<form method="POST">
+
+    <label><strong>Student Name:</strong></label>
+    <input type="text" name="name" value="{{ student.name }}" class="form-control" required>
+
+    <h4 class="mt-4">Subjects</h4>
+
+    {% for sub in student.subjects %}
+    <div class="border rounded p-3 mb-3">
+        <label>Subject Name:</label>
+        <input type="text" name="subject" class="form-control" value="{{ sub.name }}" required>
+
+        <label>Test 1:</label>
+        <input type="number" name="test1" class="form-control" value="{{ sub.test1 }}" required>
+
+        <label>Test 2:</label>
+        <input type="number" name="test2" class="form-control" value="{{ sub.test2 }}" required>
+
+        <label>Exam:</label>
+        <input type="number" name="exam" class="form-control" value="{{ sub.exam }}" required>
+    </div>
+    {% endfor %}
+
+    <button class="btn btn-primary" type="submit">Save Changes</button>
+    <a href="/students" class="btn btn-secondary">Cancel</a>
+</form>
+
+{% endblock %}

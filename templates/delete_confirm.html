@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="text-danger">⚠ Delete Student</h2>
+<p>Are you sure you want to delete <strong>{{ student.name }}</strong>?</p>
+
+<form method="POST">
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="/students" class="btn btn-secondary">Cancel</a>
+</form>
+
+{% endblock %}

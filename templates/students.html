@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>📚 All Students</h2>
+<hr>
+
+<div class="table-responsive">
+<table class="table table-striped table-bordered align-middle">
+    <thead class="table-primary">
+        <tr>
+            <th>Name</th>
+            <th>Average</th>
+            <th>Grade</th>
+            <th style="width: 220px;">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.average }}</td>
+            <td>{{ student.grade }}</td>
+            <td>
+                <a href="/student/{{ loop.index0 }}" class="btn btn-info btn-sm me-1">View</a>
+                <a href="/edit/{{ loop.index0 }}" class="btn btn-warning btn-sm me-1">Edit</a>
+                <a href="/delete/{{ loop.index0 }}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% if not students %}
+<div class="alert alert-secondary text-center mt-3">
+    No students saved yet.
+</div>
+{% endif %}
+
+{% endblock %}

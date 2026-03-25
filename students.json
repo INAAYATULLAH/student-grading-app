@@ -1,0 +1,93 @@
+[
+    {
+        "name": "Paul",
+        "average": 75.78,
+        "grade": "A",
+        "subjects": [
+            {
+                "name": "Chemistry",
+                "test1": 12.0,
+                "test2": 10.0,
+                "exam": 45.9,
+                "total": 67.9
+            },
+            {
+                "name": "philosophy",
+                "test1": 11.0,
+                "test2": 10.0,
+                "exam": 66.9,
+                "total": 87.9
+            },
+            {
+                "name": "Agricultural science",
+                "test1": 11.0,
+                "test2": 12.0,
+                "exam": 23.9,
+                "total": 46.9
+            },
+            {
+                "name": "Geography",
+                "test1": 17.0,
+                "test2": 6.0,
+                "exam": 67.9,
+                "total": 90.9
+            },
+            {
+                "name": "Home economics",
+                "test1": 2.0,
+                "test2": 17.0,
+                "exam": 68.9,
+                "total": 87.9
+            },
+            {
+                "name": "Biology",
+                "test1": 9.0,
+                "test2": 10.0,
+                "exam": 67.9,
+                "total": 86.9
+            },
+            {
+                "name": "Accounting",
+                "test1": 12.0,
+                "test2": 14.0,
+                "exam": 61.9,
+                "total": 87.9
+            },
+            {
+                "name": "Info Tech",
+                "test1": 11.0,
+                "test2": 15.0,
+                "exam": 23.9,
+                "total": 49.9
+            }
+        ]
+    },
+    {
+        "name": "Musa",
+        "subjects": [
+            {
+                "name": "Physics",
+                "test1": 7.6,
+                "test2": 11.2,
+                "exam": 86.6,
+                "total": 105.4
+            },
+            {
+                "name": "Chemistry",
+                "test1": 12.0,
+                "test2": 11.0,
+                "exam": 65.7,
+                "total": 88.7
+            },
+            {
+                "name": "Technical Drawing",
+                "test1": 12.0,
+                "test2": 10.0,
+                "exam": 56.3,
+                "total": 78.3
+            }
+        ],
+        "average": 90.8,
+        "grade": "A"
+    }
+]

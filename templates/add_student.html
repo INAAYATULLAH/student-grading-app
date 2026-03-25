@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            width: 70%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover { background: #0056b3; }
+        .subject-block {
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>➕ Add Student</h2>
+
+    <form method="POST" action="/add">
+        
+        <label><strong>Student Name:</strong></label>
+        <input type="text" name="name" required>
+
+        <h3>Subjects and Scores</h3>
+
+        <div id="subjects"></div>
+
+        <button type="button" onclick="addSubject()">➕ Add Subject</button>
+
+        <br><br>
+        <button class="btn" type="submit">Save Student</button>
+    </form>
+</div>
+
+<script>
+function addSubject() {
+    let div = document.createElement("div");
+    div.classList.add("subject-block");
+
+    div.innerHTML = `
+        <label>Subject Name:</label>
+        <input type="text" name="subject" required>
+
+        <label>Test 1 Score:</label>
+        <input type="number" name="test1" required step="0.1">
+
+        <label>Test 2 Score:</label>
+        <input type="number" name="test2" required step="0.1">
+
+        <label>Exam Score:</label>
+        <input type="number" name="exam" required step="0.1">
+    `;
+
+    document.getElementById("subjects").appendChild(div);
+}
+</script>
+
+</body>
+</html>
