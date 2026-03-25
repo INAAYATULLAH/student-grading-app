@@ -54,7 +54,7 @@ def do_login():
     password = request.form.get("password")
 
     ADMIN_USER = "Admin"
-    ADMIN_PASS = "1234"
+    ADMIN_PASS = "Muslim Pride Schools"
 
     if username == ADMIN_USER and password == ADMIN_PASS:
         session["logged_in"] = True
